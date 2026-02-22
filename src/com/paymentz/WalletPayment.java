@@ -2,17 +2,16 @@ package com.paymentz;
 
 public class WalletPayment extends Payment {
     
-    public String walletName;
+    private String walletName;
 
     public WalletPayment(String transactionId, double amount, String walletName) {
-        this.transactionId = transactionId;
-        this.amount = amount;
+       super(transactionId,amount);
         this.walletName = walletName;
     }
 
     @Override
     public void processPayment() {
-        System.out.println("Processing WALLET payment of $" + amount + " via " + walletName);
+        System.out.println("Processing WALLET payment via " + walletName);
     }
     
 }
